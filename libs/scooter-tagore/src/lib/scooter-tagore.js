@@ -12,10 +12,10 @@ export function ScooterTagore({ onCommand }) {
   const JSONCommand = {
     "Brainstorm Ideas": "Brainstorm ideas on ",
     "Blog Post": "Write a blog post about ",
-    Outline: "Write an outline about ",
+    "Outline": "Write an outline about ",
     "Social Media Post": "Write a social media post about ",
     "Creative Story": "Write a creative story about ",
-    Essay: "Write an essay about ",
+    "Essay": "Write an essay about ",
     "To Do List": "Write a todo list about ",
     "Pros and Cons List": "Write a pros and cons list about ",
   };
@@ -35,9 +35,6 @@ export function ScooterTagore({ onCommand }) {
     // This function would depend on the specific AI and data sources being used
     const text = await generateText(topic);
     return text;
-    // Use Notion API to create a new page with the text
-    // const pageId = await createPage(topic, text);
-    // return `Wrote about ${topic} on page ${pageId}`;
   };
 
   const generateText = async topic => {
@@ -108,78 +105,4 @@ export function ScooterTagore({ onCommand }) {
 }
 export default ScooterTagore;
 
-// const Obcommands = [
-//   {"Brainstorm Ideas":"Brainstorm ideas on "},
-//   {"Blog Post":"Write a blog post about "},
-//   {"Outline":"Write an outline about "},
-//  { "Social Media Post":"Write a social media post about "},
-//   {"Creative Story":"Write a creative story about "},
-//   {"Essay":"Write an essay about "},
-//   {"To Do List":"Write a todo list about "},
-//   {"Pros and Cons List":"Write a pros and cons list about "},
-// ];
-// import { Editor } from '@tiptap/react';
-// import { useState, useEffect } from 'react';
 
-// function TiptapEditor() {
-//   const [editorContent, setEditorContent] = useState('');
-//   const [aiSuggestions, setAiSuggestions] = useState([]);
-
-//   useEffect(() => {
-//     // Call the AI API whenever the editor content changes
-//     fetch('/ai-api', {
-//       method: 'POST',
-//       body: JSON.stringify({ content: editorContent }),
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//     .then(response => response.json())
-//     .then(data => setAiSuggestions(data.suggestions))
-//     .catch(error => console.error(error));
-//   }, [editorContent]);
-
-//   const aiButton = {
-//     // Define a custom Tiptap button that triggers the AI analysis
-//     name: 'ai-button',
-//     icon: 'search',
-//     tooltip: 'Get AI suggestions',
-//     run: () => {
-//       // Call the AI API and display the results
-//       fetch('/ai-api', {
-//         method: 'POST',
-//         body: JSON.stringify({ content: editorContent }),
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       })
-//       .then(response => response.json())
-//       .then(data => setAiSuggestions(data.suggestions))
-//       .catch(error => console.error(error));
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <Editor
-//         content={editorContent}
-//         onUpdate={(content) => setEditorContent(content)}
-//         extensions={[aiButton]}
-//       />
-//       {aiSuggestions.length > 0 && (
-//         <div className="ai-suggestions">
-//           <ul>
-//             {aiSuggestions.map((suggestion, index) => (
-//               <li key={index}>{suggestion}</li>
-//             ))}
-//           </ul>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-// const createPage = async (title, text) => {
-//   // Use Notion API to create a new page with the text
-//   // This function would depend on the specific Notion API being used
-//   return 'abc123'; // Replace with actual page ID
-// };
