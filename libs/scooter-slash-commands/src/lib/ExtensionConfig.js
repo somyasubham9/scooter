@@ -39,6 +39,7 @@ export const SlashCommandsExtension = {
       MENU_ITEMS.EMOJI,
       MENU_ITEMS.DIVIDER,
       MENU_ITEMS.RAW_HTML,
+      MENU_ITEMS.GENERATE,
       {
         ...MENU_ITEMS.EMBED,
         command: (...args) => {

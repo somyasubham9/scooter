@@ -1,9 +1,10 @@
-import { ScooterCore } from '@factly/scooter-core';
+import { ScooterCore } from "@factly/scooter-core";
+import { ScooterTagore } from "@factly/scooter-tagore";
 export function App() {
   return (
     <>
       <h1 className="">Scooter demo</h1>
-      <ScooterCore />
+      <ScooterTagore />
     </>
   );
 }
@@ -14,13 +15,13 @@ if (import.meta.vitest) {
   const { it, expect, beforeEach } = import.meta.vitest;
   let render;
   beforeEach(async () => {
-    render = (await import('@testing-library/react')).render;
+    render = (await import("@testing-library/react")).render;
   });
-  it('should render successfully', () => {
+  it("should render successfully", () => {
     const { baseElement } = render(<App />);
     expect(baseElement).toBeTruthy();
   });
-  it('should have a greeting as the title', () => {
+  it("should have a greeting as the title", () => {
     const { getByText } = render(<App />);
     expect(getByText(/Welcome test/gi)).toBeTruthy();
   });

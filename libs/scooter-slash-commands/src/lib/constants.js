@@ -15,6 +15,7 @@ import {
   RiSeparator,
   RiVideoLine,
 } from "react-icons/ri";
+import { GiArtificialIntelligence } from "react-icons/gi";
 
 export const EDITOR_OPTIONS = {
   // DEFAULT EDITOR OPTIONS
@@ -45,6 +46,7 @@ export const EDITOR_OPTIONS = {
   VIDEO_EMBED: "video-embed",
   EMBED: "embed",
   RAW_HTML: "raw-html",
+  GENERATE: "generate",
 
   // OTHER AVAILABLE OPTIONS
   H3: "h3",
@@ -253,11 +255,25 @@ export const MENU_ITEMS = {
     command: ({ editor, range }) =>
       editor.chain().focus().deleteRange(range).run(),
   },
+  GENERATE: {
+    optionName: EDITOR_OPTIONS.GENERATE,
+    title: "Generate",
+    description: "Ask AI to Generate",
+    Icon: GiArtificialIntelligence,
+    command: ({ editor, range }) =>
+      editor
+        .chain()
+        .focus()
+        .deleteRange(range)
+        .insertContent("Write Something about ")
+        .run(),
+  },
 
   // placeholder item when no matching results found
   NO_RESULT: {
     title: "No results",
     command: ({ editor, range }) => {
+      console.log(editor.extenstions.Placeholder.placeholder);
       editor.chain().focus().deleteRange(range).run();
     },
   },

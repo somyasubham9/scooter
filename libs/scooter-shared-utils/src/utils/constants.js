@@ -40,6 +40,7 @@ export const EDITOR_OPTIONS = {
   VIDEO_EMBED: "video-embed",
   EMBED: "embed",
   RAW_HTML: "raw-html",
+  GENERATE: "generate",
 
   // OTHER AVAILABLE OPTIONS
   H3: "h3",
@@ -75,4 +76,5 @@ export const DEFAULT_EDITOR_OPTIONS = [
   EDITOR_OPTIONS.LIST_ORDERED,
   EDITOR_OPTIONS.EMBED,
   EDITOR_OPTIONS.RAW_HTML,
+  EDITOR_OPTIONS.GENERATE,
 ];

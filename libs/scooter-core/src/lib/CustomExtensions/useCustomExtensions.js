@@ -28,6 +28,7 @@ import Placeholder, {
 import { SlashCommandsExtension } from "@factly/scooter-slash-commands";
 import Title from "./Title/ExtensionConfig";
 import Typography from "./Typography/EditorConfig";
+import { ScooterTagore } from "@factly/scooter-tagore";
 // import Variable from './Variable/ExtensionConfig';
 // import InsertRawHTML from './InsertRawHTML';
 
@@ -92,6 +93,7 @@ const useCustomExtensions = ({
     TableRow,
     TableHeader,
     TableCell,
+    // ScooterTagore(),
   ];
 
   if (isSlashCommandsActive) {
