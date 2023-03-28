@@ -14,6 +14,7 @@ export const SlashCommandsExtension = {
   configure: ({
     setImageUploadVisible,
     setEmbedFetcherVisible,
+    setTagoreFetcherVisible,
     addonCommands,
     options: allowedCommandOptions,
   }) => {
@@ -45,6 +46,13 @@ export const SlashCommandsExtension = {
         command: (...args) => {
           setEmbedFetcherVisible(true);
           MENU_ITEMS.EMBED.command(...args);
+        },
+      },
+      {
+        ...MENU_ITEMS.GENERATE,
+        command: (...args) => {
+          setTagoreFetcherVisible(true);
+          MENU_ITEMS.GENERATE.command(...args);
         },
       },
     ];

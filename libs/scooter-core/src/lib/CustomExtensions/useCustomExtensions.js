@@ -17,6 +17,7 @@ import { isNilOrEmpty } from "@factly/scooter-shared-utils";
 import { CodeBlockExtension } from "@factly/scooter-code-block";
 import Document from "./Document/ExtensionConfig";
 import { EmbedExtension } from "@factly/scooter-embed";
+import { TagoreExtension}  from "@factly/scooter-tagore";
 // import EmojiPicker from './Emoji/EmojiPicker/ExtensionConfig';
 // import EmojiSuggestion from './Emoji/EmojiSuggestion/ExtensionConfig';
 import { ImageExtensionConfig } from "@factly/scooter-image";
@@ -28,7 +29,7 @@ import Placeholder, {
 import { SlashCommandsExtension } from "@factly/scooter-slash-commands";
 import Title from "./Title/ExtensionConfig";
 import Typography from "./Typography/EditorConfig";
-import { ScooterTagore } from "@factly/scooter-tagore";
+
 // import Variable from './Variable/ExtensionConfig';
 // import InsertRawHTML from './InsertRawHTML';
 
@@ -42,6 +43,7 @@ const useCustomExtensions = ({
   showImageInMention,
   setImageUploadVisible,
   setEmbedFetcherVisible,
+  setTagoreFetcherVisible,
   options,
   addonCommands,
   characterLimit,
@@ -72,6 +74,7 @@ const useCustomExtensions = ({
     ImageExtensionConfig,
     // Dropcursor,
     EmbedExtension,
+    TagoreExtension,
     Link,
     Color,
     Placeholder.configure({
@@ -101,6 +104,7 @@ const useCustomExtensions = ({
       SlashCommandsExtension.configure({
         setImageUploadVisible,
         setEmbedFetcherVisible,
+        setTagoreFetcherVisible,
         options,
         addonCommands,
       })

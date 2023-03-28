@@ -263,9 +263,7 @@ export const MENU_ITEMS = {
     command: ({ editor, range }) =>
       editor
         .chain()
-        .focus()
         .deleteRange(range)
-        .insertContent("Write Something about ")
         .run(),
   },
 
@@ -273,7 +271,6 @@ export const MENU_ITEMS = {
   NO_RESULT: {
     title: "No results",
     command: ({ editor, range }) => {
-      console.log(editor.extenstions.Placeholder.placeholder);
       editor.chain().focus().deleteRange(range).run();
     },
   },

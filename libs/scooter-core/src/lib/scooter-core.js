@@ -7,6 +7,7 @@ import { EditorView } from "prosemirror-view";
 import { BubbleMenu } from "@factly/scooter-bubble-menu";
 import CharacterCount from "./CustomExtensions/CharacterCount";
 import { EmbedFetcher } from "@factly/scooter-embed";
+import { TagoreFetcher } from "@factly/scooter-tagore";
 import { FixedMenu } from "@factly/scooter-fixed-menu";
 import { Uploader as ImageUploader } from "@factly/scooter-image";
 import useCustomExtensions from "./CustomExtensions/useCustomExtensions";
@@ -36,6 +37,7 @@ export const ScooterCore = React.forwardRef(
       iframelyEndpoint,
       uploadConfig = {},
       embedConfig = {},
+      tagoreConfig={},
       initialValue = "<p></p>",
       onChange = ({ html, json, text }) => { console.log({ html, json, text }); return { html, json, text } },
       onFocus = () => { },
@@ -66,6 +68,7 @@ export const ScooterCore = React.forwardRef(
   ) => {
     const [isImageUploadVisible, setImageUploadVisible] = useState(false);
     const [isEmbedFetcherVisible, setEmbedFetcherVisible] = useState(false);
+    const [isTagoreFetcherVisible, setTagoreFetcherVisible] = useState(false);
 
     const isFixedMenuActive = menuType === "fixed";
     const isBubbleMenuActive = menuType === "bubble";
@@ -93,6 +96,7 @@ export const ScooterCore = React.forwardRef(
       showImageInMention,
       setImageUploadVisible,
       setEmbedFetcherVisible,
+      setTagoreFetcherVisible,
       options: addonOptions,
       addonCommands,
       characterLimit,
@@ -194,6 +198,12 @@ export const ScooterCore = React.forwardRef(
           editor={editor}
           iframelyEndpoint={iframelyEndpoint}
           embedConfig={embedConfig}
+        />
+        <TagoreFetcher
+          isVisible={isTagoreFetcherVisible}
+          setIsVisible={setTagoreFetcherVisible}
+          editor={editor}
+          tagoreConfig={tagoreConfig}
         />
         <EditorContent editor={editor} {...otherProps} />
         {isCharacterCountActive && (

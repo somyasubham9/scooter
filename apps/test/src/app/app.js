@@ -4,7 +4,7 @@ export function App() {
   return (
     <>
       <h1 className="">Scooter demo</h1>
-      <ScooterTagore />
+      <ScooterCore />
     </>
   );
 }

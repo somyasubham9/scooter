@@ -18,11 +18,11 @@ export const EmbedFetcher = ({
   const [captionText, setCaptionText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
-  const increase = () => {
-    props.updateAttributes({
-      count: props.node.attrs.count + 1,
-    });
-  };
+  // const increase = () => {
+  //   props.updateAttributes({
+  //     count: props.node.attrs.count + 1,
+  //   });
+  // };
 
   const fetchIframelyData = async url => {
     try {
