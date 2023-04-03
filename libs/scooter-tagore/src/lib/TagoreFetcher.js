@@ -64,11 +64,10 @@ export function TagoreFetcher({
       editor
       .chain()
       .focus()
-      .setEmbed({ data, caption: captionText })
+      .setTagore({ data, caption: captionText })
       .run();
       setInputValue("");
       setIsVisible(false);
-      inputRef.current.focus();
     }
   };
 
@@ -91,8 +90,9 @@ export function TagoreFetcher({
 
   return (
      isVisible &&
-    <NodeViewContent>
-    <div className="container">
+     <NodeViewWrapper>
+   
+    <pre className="container">
       <input
         className="input"
         type="text"
@@ -114,9 +114,9 @@ export function TagoreFetcher({
             ))}
         </ul>
       )}
-    </div>
-    </NodeViewContent>
-
+    </pre>
+    
+    </NodeViewWrapper>
   );
 }
 

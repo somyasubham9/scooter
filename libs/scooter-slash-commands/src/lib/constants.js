@@ -261,10 +261,13 @@ export const MENU_ITEMS = {
     description: "Ask AI to Generate",
     Icon: GiArtificialIntelligence,
     command: ({ editor, range }) =>
-      editor
+     { editor
         .chain()
         .deleteRange(range)
-        .run(),
+        .run()
+
+      },
+      
   },
 
   // placeholder item when no matching results found

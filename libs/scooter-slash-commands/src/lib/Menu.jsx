@@ -101,9 +101,10 @@ export class SlashCommandsMenu extends React.Component {
         ref={this.menuRef}
         className="scooter-editor-slash-commands__wrapper"
       >
+  
         {items.map((item, index) => {
           const isLeafNode = isNilOrEmpty(item.items);
-
+          console.log(item);
           const nodeElement = (
             <MenuItem
               key={item.title}
@@ -123,7 +124,7 @@ export class SlashCommandsMenu extends React.Component {
               interactive
               placement="right"
               content={
-                <Menu
+                <SlashCommandsMenu
                   {...this.props}
                   items={item.items}
                   menuIndex={menuIndex + 1}
@@ -142,6 +143,8 @@ export class SlashCommandsMenu extends React.Component {
             </Tippy>
           );
         })}
+       
+        
       </div>
     );
   }
@@ -173,3 +176,6 @@ const MenuItem = forwardRef(
 );
 
 export default SlashCommandsMenu;
+
+
+
