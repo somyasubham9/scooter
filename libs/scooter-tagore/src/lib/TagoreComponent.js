@@ -10,8 +10,8 @@ export const TagoreComponent = props => {
   }, [props]);
 
   return (
-    <NodeViewWrapper className="embed-node-view-wrapper">
-      {data && <InnerHTML className="embed-content" html={data.html} />}
+    <NodeViewWrapper className="tagore-node-view-wrapper">
+      {data && <InnerHTML className="tagore-content" html={data.html} />}
     </NodeViewWrapper>
   );
 };

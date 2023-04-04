@@ -2,6 +2,8 @@ import "./scooter-tagore.scss";
 import { useState, useEffect, useRef } from "react";
 import './scooter-tagore.scss'
 import { NodeViewWrapper,NodeViewContent } from "@tiptap/react";
+import axios from 'axios'
+
 export function TagoreFetcher({
   isVisible,
   setIsVisible,
@@ -35,11 +37,11 @@ export function TagoreFetcher({
    
     async function fetchData() {
       try {
-        const response = await fetch("https://api");
+        const response = await axios.post("http://localhost:8080/prompts/generate",{input:inputValue});
         const jsonData = await response.json();
-        setData("Hello");
+        setData(jsonData);
       } catch (error) {
-        console.log("Couldn'y fetch data");
+        console.log("Couldn't fetch data");
       }
     }
     fetchData();

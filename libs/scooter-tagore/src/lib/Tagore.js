@@ -88,7 +88,7 @@ import { useState, useEffect, useRef } from "react";
     const div = document.createElement("div");
 
     div.dataset.type = "tagore";
-    div.className = "embed-wrapper";
+    div.className = "tagore-wrapper";
     div.innerHTML = HTMLAttributes["data-html"];
 
     return div;
