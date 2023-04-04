@@ -88,6 +88,7 @@ export function TagoreFetcher({
       // Hide the slash command option
       setShowCommands(false);
     }
+
   });
 
   return (

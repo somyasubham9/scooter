@@ -17,7 +17,7 @@ import { useState, useEffect, useRef } from "react";
   addAttributes() {
     return {
       class: {
-        default: "embed-container",
+        default: "tagore-container",
         rendered: true,
       },
       "data-type": {
